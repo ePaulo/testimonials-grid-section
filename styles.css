@@ -14,6 +14,10 @@
   --color-primary--white: hsl(0, 0%, 100%);
 
   --color-secondary--avatar-border: #a775f1;
+  /* slightly lighter avatar-border color */
+  --color-secondary--avatar-border--light: #bfa3ff;
+  /* much lighter avatar border color */
+  --color-secondary--avatar-border--lighter: #d7c6ff;
 
   --color-neutral--light-gray: hsl(0, 0%, 81%);
   --color-neutral--grayish-blue: hsl(210, 46%, 95%);
@@ -22,6 +26,7 @@
 }
 
 body {
+  background-color: var(--color-neutral--grayish-blue);
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
@@ -37,7 +42,7 @@ main.container {
 
   article.testimonial {
     width: 327px;
-    padding: 1.8em 2.4em 2.8em;
+    padding: 1.8em 2.45em 2.6em;
     border-radius: 8px;
 
     section.author {
@@ -49,21 +54,20 @@ main.container {
       img.avatar {
         width: 32px;
         height: 32px;
-        border: 2px solid var(--color-secondary--avatar-border);
+        border-width: 2px;
+        border-style: solid;
         border-radius: 50%;
       }
 
       div.author-details {
         h3.name {
           margin-bottom: 0.1em;
-          color: var(--color-primary--white);
           font-weight: 500;
           font-size: 1.3rem;
         }
 
         p.status {
-          color: var(--color-primary--white);
-          opacity: 0.5;
+          opacity: 0.4;
           font-size: 1.1rem;
         }
       }
@@ -71,15 +75,13 @@ main.container {
 
     section.statement {
       h2.title {
-        margin-bottom: 2em;
-        color: var(--color-primary--white);
+        margin-bottom: 0.8em;
         font-size: 2rem;
         font-weight: 600;
       }
 
       blockquote {
-        color: var(--color-neutral--light-gray);
-        opacity: 0.7;
+        opacity: 0.6;
         font-size: 1.3rem;
         line-height: 1.6em;
         letter-spacing: 0.3px;
@@ -93,11 +95,112 @@ main.container {
     background-size: 104px 102px;
     background-repeat: no-repeat;
     background-position: calc(100% - 24px) 0;
+
+    section.author {
+      img.avatar {
+        border-color: var(--color-secondary--avatar-border);
+      }
+
+      div.author-details {
+        h3.name,
+        p.status {
+          color: var(--color-primary--white);
+        }
+      }
+    }
+
+    section.statement {
+      h2.title {
+        margin-bottom: 2em;
+      }
+
+      h2.title,
+      blockquote {
+        color: var(--color-primary--white);
+      }
+    }
+  }
+
+  article#t2 {
+    background-color: var(--color-primary--grayish-blue);
+
+    section.author {
+      img.avatar {
+        border-color: var(--color-secondary--avatar-border--light);
+      }
+
+      div.author-details {
+        h3.name,
+        p.status {
+          color: var(--color-primary--white);
+        }
+      }
+    }
+
+    section.statement {
+      h2.title,
+      blockquote {
+        color: var(--color-primary--white);
+      }
+    }
+  }
+
+  article#t3,
+  article#t5 {
+    background-color: var(--color-primary--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    section.author {
+      img.avatar {
+        border-color: var(--color-secondary--avatar-border--lighter);
+      }
+
+      div.author-details {
+        h3.name,
+        p.status {
+          color: var(--color-primary--grayish-blue);
+        }
+      }
+    }
+
+    section.statement {
+      h2.title,
+      blockquote {
+        color: var(--color-primary--grayish-blue);
+      }
+    }
+  }
+
+  article#t4 {
+    background-color: var(--color-primary--blackish-blue);
+
+    section.author {
+      img.avatar {
+        border-color: var(--color-secondary--avatar-border);
+      }
+
+      div.author-details {
+        h3.name,
+        p.status {
+          color: var(--color-primary--white);
+        }
+      }
+    }
+
+    section.statement {
+      h2.title {
+        color: var(--color-neutral--light-gray);
+      }
+
+      blockquote {
+        color: var(--color-primary--white);
+      }
+    }
   }
 }
 
 footer.attribution {
-  margin: 2em auto;
+  margin: 1.5em auto;
   font-size: 1rem;
   text-align: center;
 
