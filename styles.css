@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px dashed pink; */
 }
 
 :root {
@@ -14,9 +13,7 @@
   --color-primary--white: hsl(0, 0%, 100%);
 
   --color-secondary--avatar-border: #a775f1;
-  /* slightly lighter avatar-border color */
   --color-secondary--avatar-border--light: #bfa3ff;
-  /* much lighter avatar border color */
   --color-secondary--avatar-border--lighter: #d7c6ff;
 
   --color-neutral--light-gray: hsl(0, 0%, 81%);
@@ -216,12 +213,57 @@ footer.attribution {
   }
 }
 
-@media (min-width: 1110px) {
+/* ---------- Wide Screen Styling ---------- */
+
+@media (min-width: 1130px) {
   main.container {
     width: 1110px;
     display: grid;
-    /* set up 2 rows and 4 columns */
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, 1fr);
+
+    article.testimonial {
+      section.statement {
+        h2.title {
+          margin-bottom: 0.6em !important;
+        }
+
+        blockquote {
+          line-height: 1.45;
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+
+    article#t1 {
+      width: 540px;
+      height: 282px;
+      grid-row: 1;
+      grid-column: 1 / span 2;
+    }
+    article#t2 {
+      width: 255px;
+      height: 282px;
+      grid-row: 1;
+      grid-column: 3;
+    }
+    article#t3 {
+      width: 255px;
+      height: 266px;
+      grid-row: 2;
+      grid-column: 1;
+    }
+    article#t4 {
+      width: 540px;
+      height: 266px;
+      grid-row: 2;
+      grid-column: 2 / span 2;
+    }
+    article#t5 {
+      width: 255px;
+      height: 572px;
+      grid-row: 1 / span 2;
+      grid-column: 4;
+    }
   }
 }
