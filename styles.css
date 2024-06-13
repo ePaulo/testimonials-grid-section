@@ -26,15 +26,22 @@
 }
 
 body {
+  min-width: 100vw;
+  min-height: 100vh;
+
   background-color: var(--color-neutral--grayish-blue);
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main.container {
   width: 327px;
-  margin: 0.5em auto;
 
   display: flex;
   flex-direction: column;
@@ -201,10 +208,20 @@ main.container {
 
 footer.attribution {
   margin: 1.5em auto;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
 
   a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (min-width: 1110px) {
+  main.container {
+    width: 1110px;
+    display: grid;
+    /* set up 2 rows and 4 columns */
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
